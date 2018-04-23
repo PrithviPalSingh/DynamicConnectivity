@@ -50,40 +50,43 @@ namespace DynamicConnectivity
             };
 
             #region -- Quick find
-            //QuickFindUF qfuf = new QuickFindUF(N);
-            //foreach (var item in items)
-            //{
-            //    if (!qfuf.Connected(item.p, item.q))
-            //    {
-            //        qfuf.Union(item.p, item.q);
-            //        Console.WriteLine(item.p + "   " + item.q);
-            //    }
-            //}
-            #endregion
-
-            #region -- Quick union
-            //QuickUnionUF quuf = new QuickUnionUF(N);
-            //foreach (var item in items)
-            //{
-            //    if (!quuf.Connected(item.p, item.q))
-            //    {
-            //        quuf.Union(item.p, item.q);
-            //        Console.WriteLine(item.p + "   " + item.q);
-            //    }
-            //}
-            #endregion
-
-            #region -- Quick weighted union
-            WeightedQuickUnionUF wquuf = new WeightedQuickUnionUF(N);
+            QuickFindUF qfuf = new QuickFindUF(N);
             foreach (var item in items)
             {
-                if (!wquuf.Connected(item.p, item.q))
+                if (!qfuf.Connected(item.p, item.q))
                 {
-                    wquuf.Union(item.p, item.q);
+                    qfuf.Union(item.p, item.q);
                     Console.WriteLine(item.p + "   " + item.q);
                 }
             }
-            Console.WriteLine(wquuf.Connected(8, 9));
+            Console.WriteLine(qfuf.Connected(8, 9));
+            #endregion
+
+            #region -- Quick union
+            QuickUnionUF quuf = new QuickUnionUF(N);
+            foreach (var item in items)
+            { 
+                if (!quuf.Connected(item.p, item.q))
+                {
+                    quuf.Union(item.p, item.q);
+                    Console.WriteLine(item.p + "   " + item.q);
+                }
+            }
+            Console.WriteLine(quuf.Connected(8, 9));
+            #endregion
+
+            #region -- Quick weighted union
+            //WeightedQuickUnionUF wquuf = new WeightedQuickUnionUF(N);
+            //foreach (var item in items)
+            //{
+            //    if (!wquuf.Connected(item.p, item.q))
+            //    {
+            //        wquuf.Union(item.p, item.q);
+            //        Console.WriteLine(item.p + "   " + item.q);
+            //    }
+            //}
+
+            //Console.WriteLine(wquuf.Connected(8, 9));
             #endregion
 
             Console.Read();

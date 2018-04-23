@@ -33,7 +33,7 @@
                 num = array[num];
             }
 
-            return array[num];
+            return num;
         }
         
         /// <summary>

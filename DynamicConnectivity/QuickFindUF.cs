@@ -2,6 +2,8 @@
 /// <summary>
 /// Quick find algorithm
 /// Too slow for huge problems 
+/// This is called an Eager approach
+/// Trees are flat but keeping them flat is too expensive
 /// </summary>
 namespace DynamicConnectivity
 {
@@ -30,12 +32,13 @@ namespace DynamicConnectivity
         /// <returns></returns>
         public bool Connected(int p, int q)
         {
-            Console.WriteLine(array[p] == array[q]);
             return array[p] == array[q];
         }
 
         /// <summary>
-        /// O(N)
+        /// O(N) for single union command
+        /// If there is a union of N objects this will take Quadratic time
+        /// Quadratic algorithms don't scale with technology
         /// </summary>
         /// <param name="p"></param>
         /// <param name="q"></param>

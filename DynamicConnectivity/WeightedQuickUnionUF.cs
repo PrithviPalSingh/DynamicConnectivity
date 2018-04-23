@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace DynamicConnectivity
 {
+    /// <summary>
+    /// Keep track of size of each tree
+    /// Balance by linking root of smaller tree to root of larger tree.
+    /// Same as Quick union except an extra array sz[i] is added to capture number of objects in the tree rooted at i.
+    /// </summary>
     class WeightedQuickUnionUF
     {
         private int[] array;
@@ -34,13 +39,15 @@ namespace DynamicConnectivity
         {
             while (num != array[num])
             {
-                // This line is for path compression
+                /* This line is for path compression
+                 * Flattening the tree
+                */
                 //array[num] = array[array[num]];
 
                 num = array[num];
             }
 
-            return array[num];
+            return num;
         }
 
         /// <summary>
