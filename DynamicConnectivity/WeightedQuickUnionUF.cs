@@ -27,7 +27,7 @@ namespace DynamicConnectivity
             for (int i = 0; i < N; i++)
             {
                 array[i] = i;
-                weight[i] = i;
+                weight[i] = 1;
             }
         }
         /// <summary>
